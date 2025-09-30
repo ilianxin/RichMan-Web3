@@ -1,0 +1,19 @@
+{
+  "images": {
+    "board": "https://p9-aiop-sign.byteimg.com/tos-cn-i-vuqhorh59i/20250930162800FB85738082B53F925447-1997-0~tplv-vuqhorh59i-image-v1.image?rk3s=7f9e702d&x-expires=1759307289&x-signature=Vh2ivE77ksHvk%2FxEcs7EE0P6q0Y%3D",
+    "building1": "https://p26-aiop-sign.byteimg.com/tos-cn-i-vuqhorh59i/20250930162810FB85738082B53F925885-5369-0~tplv-vuqhorh59i-image-v1.image?rk3s=7f9e702d&x-expires=1759307297&x-signature=6fpPnih8jN45kJmuZ8vsQ8iR2x0%3D",
+    "building2": "https://p3-aiop-sign.byteimg.com/tos-cn-i-vuqhorh59i/20250930162818FB85738082B53F925BC4-1709-0~tplv-vuqhorh59i-image-v1.image?rk3s=7f9e702d&x-expires=1759307306&x-signature=c21CiwHEWIGqUJ4e2bWyBzq3Q4A%3D",
+    "building3": "https://p26-aiop-sign.byteimg.com/tos-cn-i-vuqhorh59i/20250930162828FB85738082B53F925F37-4554-0~tplv-vuqhorh59i-image-v1.image?rk3s=7f9e702d&x-expires=1759307315&x-signature=Z4KtGANeeP8AydNKrjdsJZouXd8%3D",
+    "character1": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Crect fill='%234299e1' width='48' height='48' rx='4'/%3E%3Ctext x='24' y='32' font-size='24' text-anchor='middle' fill='white'%3E👨%3C/text%3E%3C/svg%3E",
+    "character2": "https://p3-aiop-sign.byteimg.com/tos-cn-i-vuqhorh59i/20250930162838FB85738082B53F926360-4693-0~tplv-vuqhorh59i-image-v1.image?rk3s=7f9e702d&x-expires=1759307326&x-signature=2nwGn9iEqpNcldmS1Cs11kDuh0c%3D",
+    "card": "https://p26-aiop-sign.byteimg.com/tos-cn-i-vuqhorh59i/20250930162854A20B4FB71975C188CE84-4630-0~tplv-vuqhorh59i-image-v1.image?rk3s=7f9e702d&x-expires=1759307341&x-signature=k5OTfu5qAnrvD7JGWmImBFmdaLc%3D"
+  },
+  "colors": {
+    "primary": "#667eea",
+    "secondary": "#764ba2",
+    "success": "#48bb78",
+    "danger": "#f56565",
+    "warning": "#ed8936",
+    "info": "#4299e1"
+  }
+}
