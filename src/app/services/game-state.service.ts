@@ -17,6 +17,7 @@ export interface BoardTile {
   owner?: string | null;
   level?: number;
   color?: string;
+  isMinted?: boolean;
 }
 
 @Injectable({

@@ -150,7 +150,7 @@ export class Web3Service {
         throw new Error('Contract not initialized');
       }
 
-      const tx = await contract.purchaseBuilding(position);
+      const tx = await contract['purchaseBuilding'](position);
       await tx.wait();
       console.log('Building purchased at position:', position);
       return true;
@@ -167,7 +167,7 @@ export class Web3Service {
         throw new Error('Contract not initialized');
       }
 
-      const tx = await contract.upgradeBuilding(position);
+      const tx = await contract['upgradeBuilding'](position);
       await tx.wait();
       console.log('Building upgraded at position:', position);
       return true;
@@ -185,7 +185,7 @@ export class Web3Service {
       }
 
       const mintFee = ethers.parseEther('0.001');
-      const tx = await contract.mintBuildingNFT(position, { value: mintFee });
+      const tx = await contract['mintBuildingNFT'](position, { value: mintFee });
       await tx.wait();
       console.log('Building NFT minted at position:', position);
       return true;
@@ -203,7 +203,7 @@ export class Web3Service {
       }
 
       const rentAmount = ethers.parseEther(amount);
-      const tx = await contract.payRent(position, { value: rentAmount });
+      const tx = await contract['payRent'](position, { value: rentAmount });
       await tx.wait();
       console.log('Rent paid for position:', position);
       return true;
@@ -220,7 +220,7 @@ export class Web3Service {
         return null;
       }
 
-      const building = await contract.getBuilding(position);
+      const building = await contract['getBuilding'](position);
       return building;
     } catch (error) {
       console.error('Failed to get building:', error);
@@ -235,7 +235,7 @@ export class Web3Service {
         return '0';
       }
 
-      const rent = await contract.calculateRent(position);
+      const rent = await contract['calculateRent'](position);
       return ethers.formatEther(rent);
     } catch (error) {
       console.error('Failed to calculate rent:', error);

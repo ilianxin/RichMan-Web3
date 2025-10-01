@@ -28,7 +28,7 @@ import { Web3Service } from '../../services/web3.service';
             </div>
             <div class="stat-item">
               <span class="stat-label">🏠 地产:</span>
-              <span class="stat-value">{{ (playerState$ | async)?.properties.length || 0 }}</span>
+              <span class="stat-value">{{ (playerState$ | async)?.properties?.length || 0 }}</span>
             </div>
           </div>
 
@@ -100,7 +100,7 @@ import { Web3Service } from '../../services/web3.service';
               </div>
             </div>
 
-            <div class="no-properties" *ngIf="!(playerState$ | async)?.properties.length">
+            <div class="no-properties" *ngIf="!(playerState$ | async)?.properties?.length">
               暂无地产，请通过掷骰子购买地产！
             </div>
 

@@ -329,7 +329,4 @@ export class MainScene extends Phaser.Scene {
     });
   }
 
-  update() {
-    // Game loop updates
-  }
 }
