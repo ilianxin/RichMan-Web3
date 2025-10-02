@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { GameComponent } from './components/game/game.component';
 import { WalletComponent } from './components/wallet/wallet.component';
 import { Web3Service } from './services/web3.service';
@@ -8,18 +9,22 @@ import { GameStateService } from './services/game-state.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, GameComponent, WalletComponent],
+  imports: [CommonModule, RouterModule, GameComponent, WalletComponent],
   template: `
     <div class="app-container">
       <header class="game-header">
         <div class="header-content">
           <h1 class="game-title">🎮 RichMan Web3</h1>
+          <nav class="nav-links">
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">游戏</a>
+            <a routerLink="/okx-wallet" routerLinkActive="active">OKX 钱包</a>
+          </nav>
           <app-wallet></app-wallet>
         </div>
       </header>
 
       <main class="game-main">
-        <app-game></app-game>
+        <router-outlet></router-outlet>
       </main>
 
       <footer class="game-footer">
@@ -55,6 +60,30 @@ import { GameStateService } from './services/game-state.service';
       color: white;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       margin: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links a.active {
+      background: rgba(255, 255, 255, 0.2);
+      font-weight: 600;
     }
 
     .game-main {

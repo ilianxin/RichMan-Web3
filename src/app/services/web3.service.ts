@@ -28,6 +28,7 @@ export class Web3Service {
 
   private contractAddress: string = '';
   private contractABI: any[] = [];
+  private currentChainId: number = 0;
 
   constructor() {
     this.loadContractInfo();
@@ -87,11 +88,16 @@ export class Web3Service {
       this.signerSubject.next(signer);
       this.accountSubject.next(account);
       this.networkSubject.next(network.name);
+      this.currentChainId = Number(network.chainId);
 
       await this.updateBalance(account);
       await this.initContract(signer);
 
+      // 显示当前网络信息
+      this.displayNetworkInfo(network);
+
       console.log('Wallet connected:', account);
+      console.log('Network:', network.name, 'Chain ID:', this.currentChainId);
       return account;
     } catch (error) {
       console.error('Failed to connect wallet:', error);
@@ -241,5 +247,42 @@ export class Web3Service {
       console.error('Failed to calculate rent:', error);
       return '0';
     }
+  }
+
+  private displayNetworkInfo(network: any) {
+    const chainId = Number(network.chainId);
+    const networkNames: { [key: number]: string } = {
+      1: '以太坊主网 (Mainnet)',
+      5: 'Goerli 测试网',
+      11155111: 'Sepolia 测试网',
+      1337: 'Hardhat 本地网络',
+      31337: 'Hardhat 本地网络'
+    };
+
+    const networkName = networkNames[chainId] || `未知网络 (Chain ID: ${chainId})`;
+    console.log(`🌐 已连接到: ${networkName}`);
+  }
+
+  getNetworkName(): string {
+    const networkNames: { [key: number]: string } = {
+      1: 'Mainnet',
+      5: 'Goerli',
+      11155111: 'Sepolia',
+      1337: 'Localhost',
+      31337: 'Localhost'
+    };
+    return networkNames[this.currentChainId] || 'Unknown';
+  }
+
+  getCurrentChainId(): number {
+    return this.currentChainId;
+  }
+
+  isSepoliaNetwork(): boolean {
+    return this.currentChainId === 11155111;
+  }
+
+  isLocalNetwork(): boolean {
+    return this.currentChainId === 1337 || this.currentChainId === 31337;
   }
 }
